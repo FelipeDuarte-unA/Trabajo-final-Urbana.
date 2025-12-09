@@ -393,7 +393,7 @@ modelo_event <- feols(ln_precio_vivienda ~ i(periodo_rel_fct, tratamiento, ref =
 
 library(spdep)
 
-# Coordenadas de barrios (YA existentes)
+# Coordenadas de barrios
 coords <- as.matrix(barrios_base[, c("x_coord", "y_coord")])
 
 # Vecinos espaciales (k = 5)
@@ -438,7 +438,7 @@ datos_choice <- datos %>%
   select(barrio_id, calidad_educativa, precio_vivienda,
          distancia_centro, estrato_promedio)
 
-# Simular hogares (NO vuelve a simular barrios)
+# Simular hogares (no vuelve a simular barrios)
 n_hogares <- 1500
 hogares <- data.frame(
   hogar_id = 1:n_hogares,
@@ -503,7 +503,7 @@ modelsummary(
   fmt = 3
 )
 
-# Exportar en HTML también
+# Exportar 
 modelsummary(model_list,
              output = "html",
              stars = TRUE,
@@ -524,16 +524,15 @@ datos <- datos %>%
     periodo_rel_fct = factor(periodo_rel, levels = -10:10)
   )
 
-# Modelo de event 
+ 
 modelo_event <- feols(ln_precio_vivienda ~ i(periodo_rel_fct, tratamiento, ref = -1) | 
                         barrio_id + periodo, 
                       data = datos, cluster = "barrio_id")
 
-# Verificar que el modelo tiene coeficientes
+
 cat("Coeficientes del modelo event study:\n")
 print(names(coef(modelo_event)))
 
-# Método ROBUSTO para extraer coeficientes del event study
 extract_event_coefficients <- function(model) {
   coefs <- coef(model)
   ses <- se(model)
@@ -581,11 +580,11 @@ if(nrow(event_data) == 0) {
     )
 }
 
-# Verificar datos del event study
+# Verificar datos 
 cat("Datos del event study:\n")
 print(event_data)
 
-# Gráfico del event study MEJORADO
+# Gráfico 
 event_plot <- ggplot(event_data, aes(x = periodo, y = coef)) +
   # Líneas de referencia
   geom_hline(yintercept = 0, linetype = "dashed", color = "red", size = 0.8) +
@@ -629,7 +628,6 @@ event_plot <- ggplot(event_data, aes(x = periodo, y = coef)) +
 print(event_plot)
 ggsave("event_study_completo.png", event_plot, width = 12, height = 6, dpi = 300)
 
-# Método ALTERNATIVO usando iplot de fixest
 tryCatch({
   png("event_study_fixest_iplot.png", width = 1000, height = 600)
   iplot(modelo_event, 
