@@ -1,6 +1,7 @@
 # =============================================================================
 #Calidad Educativa y Localización Residencial en Bogotá
 #Universidad de los Andes
+#Autor, Juan Felipe Duarte
 # =============================================================================
 
 # Instalar y cargar librerías necesarias
@@ -37,7 +38,7 @@ theme_set(theme_minimal(base_size = 12) +
 
 set.seed(4683)
 
-# DEFINIR FUNCIÓN ESCALA
+# Definir función escala 
 
 escala <- function(x) {
   (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
@@ -387,9 +388,7 @@ modelo_event <- feols(ln_precio_vivienda ~ i(periodo_rel_fct, tratamiento, ref =
                         barrio_id + periodo, 
                       data = datos, cluster = "barrio_id")
 
-# =============================================================================
-# 7. SPATIAL FIRST DIFFERENCES (SFD) – ROSEN & ROBACK (1982)
-# =============================================================================
+# SFD
 # Comparaciones locales: barrio vs vecinos espaciales
 
 library(spdep)
@@ -426,9 +425,7 @@ modelo_sfd <- feols(
 
 summary(modelo_sfd)
 
-# =============================================================================
-# 6. MODELO DE ELECCIÓN DISCRETA (LOCALIZACIÓN RESIDENCIAL)
-# =============================================================================
+# Elección discreta
 # Microfundamento Rosen-Roback: hogares eligen barrio según utilidad indirecta
 
 library(survival)
