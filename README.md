@@ -74,6 +74,3 @@ source("Rtrabajofinal.R")
 # 5. Estimación de modelos
 # (Resultados guardados en archivos)
 ```
-
-
-*Nota: Este README corresponde al archivo de código R proporcionado y describe el proyecto de simulación completo.*
