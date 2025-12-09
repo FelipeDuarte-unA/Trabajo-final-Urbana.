@@ -1,7 +1,7 @@
 
 ## Descripción del Proyecto
 
-Este proyecto simula y analiza el efecto de la calidad educativa en las decisiones de localización residencial y los precios de la vivienda en Bogotá, utilizando un marco teórico de equilibrio espacial Rosen-Roback. El estudio combina métodos econométricos avanzados (DID, SFD, modelos de elección discreta) con datos simulados que replican características realistas de la estructura urbana de Bogotá.
+Este proyecto simula y analiza el efecto de la calidad educativa en las decisiones de localización residencial y los precios de la vivienda en Bogotá, utilizando un marco teórico de equilibrio espacial Rosen-Roback. El estudio combina métodos econométricos avanzados (DID, SFD, modelos de elección discreta) con datos simulados que replican característica de la estructura urbana de Bogotá.
 
 ## Contenido del Repositorio
 
