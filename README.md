@@ -1,5 +1,3 @@
-# Trabajo-final-Urbana.
-README: Calidad Educativa y Localización Residencial en Bogotá
 
 ## Descripción del Proyecto
 
