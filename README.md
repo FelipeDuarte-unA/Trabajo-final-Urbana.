@@ -17,7 +17,7 @@ Este proyecto simula y analiza el efecto de la calidad educativa en las decision
 ### Archivos de Salida Generados:
 - **`tabla_descriptivas_paper.tex`** / **`.html`**: Tabla de estadísticas descriptivas
 - **`tabla_resultados_regresion.tex`** / **`.html`**: Resultados completos de regresión
-- **`event_study_completo.png`**: Gráfico de event study
+- **`event_study_completo_iplot.png`**: Gráfico de event study
 - **`mapa_tratamiento_delimitado_real.png`**: Mapa de distribución del tratamiento
 - **`mapa_calidad_delimitado_real.png`**: Mapa de calidad educativa y precios
 - **`mapa_efectos_bogota.png`**: Mapa de efectos post-tratamiento
