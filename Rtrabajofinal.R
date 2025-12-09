@@ -1,7 +1,7 @@
 # =============================================================================
 #Calidad Educativa y Localización Residencial en Bogotá
 #Universidad de los Andes
-#Autor, Juan Felipe Duarte
+#Autor Juan Felipe Duarte
 # =============================================================================
 
 # Instalar y cargar librerías necesarias
